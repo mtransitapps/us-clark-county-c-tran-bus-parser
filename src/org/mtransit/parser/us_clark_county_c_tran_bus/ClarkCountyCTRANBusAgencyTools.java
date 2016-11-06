@@ -107,6 +107,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 			case 2: return "956338";
 			case 3: return "00A651";
 			case 4: return "B99874";
+			case 6: return "01A553";
 			case 7: return "8DC63F";
 			case 9: return "8781BD";
 			case 19: return "32BCAD";
@@ -119,9 +120,11 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 			case 41: return LIMITED_ROUTES_COLOR;
 			case 44: return LIMITED_ROUTES_COLOR;
 			case 47: return LIMITED_ROUTES_COLOR;
+			case 60: return LIMITED_ROUTES_COLOR;
 			case 65: return LIMITED_ROUTES_COLOR;
 			case 71: return "FDB913";
 			case 72: return "92278F";
+			case 74: return "F573A9";
 			case 78: return "00AEEf";
 			case 80: return "0072BC";
 			case 92: return "BC9632";
@@ -145,21 +148,22 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 	private static final String VANCOUVER_SHORT = "Van";
 	//
 	private static final String _152ND_AVENUE = "152nd Ave";
+	private static final String _162ND_AVENUE = "162nd Ave";
 	private static final String _192ND_AVENUE = "192nd Ave";
 	private static final String _45TH_STREET = "45th St";
-	private static final String _87TH_AVENUE = "87th Ave";
 	private static final String _99TH_STREET_TRANSIT_CENTER = "99th St " + TRANSIT_CENTER_SHORT;
 	private static final String A = "A";
 	private static final String B = "B";
 	private static final String BATTLE_GROUND = "Battle Ground";
+	private static final String DELTA_PARK = "Delta Pk";
 	private static final String DOWNTOWN_VANCOUVER = "Downtown " + VANCOUVER_SHORT;
 	private static final String FISHER_S_LANDING_TRANSIT_CENTER = "Fisher's Landing " + TRANSIT_CENTER_SHORT;
 	private static final String FRUIT_VALLEY = "Fruit Vly";
+	private static final String GRAND_CENTRAL = "Grand Central"; // Grand Ctrl
 	private static final String MAX = "MAX";
 	private static final String PARKROSE_MAX = "Parkrose " + MAX;
 	private static final String PORTLAND = "Portland";
 	private static final String SALMON_CREEK = "Salmon Crk";
-	private static final String VA_TRANSIT_CENTER = "VA " + TRANSIT_CENTER_SHORT;
 	private static final String VANCOUVER = "Vancouver"; // VANCOUVER_SHORT
 	private static final String VANCOUVER_MALL_TRANSIT_CENTER = VANCOUVER_SHORT + " Mall " + TRANSIT_CENTER_SHORT;
 	private static final String VANCOUVERPORT_MAX = VANCOUVER_SHORT + "port " + MAX;
@@ -194,9 +198,17 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER_MALL_TRANSIT_CENTER, //
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVERPORT_MAX) // DELTA_PARK + SLASH +
 				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { "111", "321", "238", "2029", "104" })) //
+						Arrays.asList(new String[] { "632", "238", "104" })) //
 				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { "104", "2875", "724", "111" })) //
+						Arrays.asList(new String[] { "104", "2875", "632" })) //
+				.compileBothTripSort());
+		map2.put(6l, new RouteTripSpec(6l, //
+				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, GRAND_CENTRAL, //
+				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, FRUIT_VALLEY) //
+				.addTripSort(MDirectionType.EAST.intValue(), //
+						Arrays.asList(new String[] { "6023", "676", "1607", "321", "6066" })) //
+				.addTripSort(MDirectionType.WEST.intValue(), //
+						Arrays.asList(new String[] { "6066", "725", "1607", "728", "6023" })) //
 				.compileBothTripSort());
 		map2.put(7l, new RouteTripSpec(7l, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, BATTLE_GROUND, //
@@ -218,19 +230,17 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, WSU_VANCOUVER, //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, _99TH_STREET_TRANSIT_CENTER) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { "110", "2213", "3703" })) //
+						Arrays.asList(new String[] { "110", "6122" })) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { "3703", "3701", //
-								"3705", "3707", //
-								"3708", "110" })) //
+						Arrays.asList(new String[] { "6122", "110" })) //
 				.compileBothTripSort());
 		map2.put(25l, new RouteTripSpec(25l, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, _99TH_STREET_TRANSIT_CENTER, //
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, FRUIT_VALLEY) //
+				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { "514", "3481", "1104", "990", "110" })) //
+						Arrays.asList(new String[] { "3492", "1104", "110" })) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { "110", "1017", "635", "514" })) //
+						Arrays.asList(new String[] { "110", "3492" })) //
 				.compileBothTripSort());
 		map2.put(30l, new RouteTripSpec(30l, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, FISHER_S_LANDING_TRANSIT_CENTER, //
@@ -252,9 +262,21 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, FISHER_S_LANDING_TRANSIT_CENTER, //
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) //
 				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { "1104", "1193", "1202", "2108", "106" })) //
+						Arrays.asList(new String[] { //
+						"1104", "1202", //
+								"1312", // ==
+								"1310", "1318", // !=
+								"2919", "6086", // !=
+								"106" //
+						})) //
 				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { "106", "1234", "1104" })) //
+						Arrays.asList(new String[] { //
+						"106", //
+								"6087", "6043", // !=
+								"1316", "2130", // !=
+								"1320", // ==
+								"1104" //
+						})) //
 				.compileBothTripSort());
 		map2.put(38l, new RouteTripSpec(38l, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, _192ND_AVENUE, //
@@ -265,20 +287,20 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 						Arrays.asList(new String[] { "2912", "1231", "1104" })) //
 				.compileBothTripSort());
 		map2.put(39l, new RouteTripSpec(39l, //
-				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, _87TH_AVENUE, //
-				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, VA_TRANSIT_CENTER) //
+				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "Stapleton", //
+				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) //
 				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { "1607", "1040", "1236" })) //
+						Arrays.asList(new String[] { "1607", "632" })) //
 				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { "1236", "1302", "1607" })) //
+						Arrays.asList(new String[] { "632", "1607" })) //
 				.compileBothTripSort());
 		map2.put(41l, new RouteTripSpec(41l, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, FISHER_S_LANDING_TRANSIT_CENTER, //
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) //
 				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { "579", "2024", "639", "106" })) //
+						Arrays.asList(new String[] { "579", "6053", "106" })) //
 				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { "106", "579", "2024", "639" })) //
+						Arrays.asList(new String[] { "106", "6046", "579" })) //
 				.compileBothTripSort());
 		map2.put(44l, new RouteTripSpec(44l, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, WARD_ROAD, //
@@ -295,6 +317,14 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 						Arrays.asList(new String[] { "111", "2381", "6038" })) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { "6038", "2403", "111" })) //
+				.compileBothTripSort());
+		map2.put(60l, new RouteTripSpec(60l, //
+				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER, //
+				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, DELTA_PARK) //
+				.addTripSort(MDirectionType.NORTH.intValue(), //
+						Arrays.asList(new String[] { "111", "633" })) //
+				.addTripSort(MDirectionType.SOUTH.intValue(), //
+						Arrays.asList(new String[] { "633", "111" })) //
 				.compileBothTripSort());
 		map2.put(65l, new RouteTripSpec(65l, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, FISHER_S_LANDING_TRANSIT_CENTER, //
@@ -316,9 +346,17 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, _152ND_AVENUE, //
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER_MALL_TRANSIT_CENTER) //
 				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { "104", "1092", "890" })) //
+						Arrays.asList(new String[] { "104", "1095" })) //
 				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { "890", "4108", "104" })) //
+						Arrays.asList(new String[] { "1095", "104" })) //
+				.compileBothTripSort());
+		map2.put(74l, new RouteTripSpec(74l, //
+				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, _162ND_AVENUE, //
+				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER_MALL_TRANSIT_CENTER) //
+				.addTripSort(MDirectionType.EAST.intValue(), //
+						Arrays.asList(new String[] { "104", "6112" })) //
+				.addTripSort(MDirectionType.WEST.intValue(), //
+						Arrays.asList(new String[] { "6112", "104" })) //
 				.compileBothTripSort());
 		map2.put(78l, new RouteTripSpec(78l, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER_MALL_TRANSIT_CENTER, //
@@ -351,13 +389,19 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, PORTLAND) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
 						Arrays.asList(new String[] { //
-						"6002", "6006", //
-								"5001", "5009", //
-								"632", "105" })) //
+						"6002", "6006", // !=
+								"5001", "5009", // !=
+								"631", // ==
+								"105" // Salmon Creek & Park and Ride #PORTLAND
+						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { "105", "2024", "639", //
-								"5001", //
-								"6002" //
+						Arrays.asList(new String[] { //
+						"105", // Salmon Creek & Park and Ride #PORTLAND
+								"579", // ==
+								"6053", // ==
+								// "2024", "639", //
+								"5001", // !=
+								"6002" // !=
 						})) //
 				.compileBothTripSort());
 		map2.put(134l, new RouteTripSpec(134l, //
