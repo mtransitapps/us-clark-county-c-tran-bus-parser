@@ -26,8 +26,8 @@ import org.mtransit.parser.mt.data.MRoute;
 import org.mtransit.parser.mt.data.MTrip;
 import org.mtransit.parser.mt.data.MTripStop;
 
-// http://www.c-tran.com/about-c-tran/business/c-tran-gtfs-data
-// http://www.c-tran.com/images/Google/GoogleTransitUpload.zip
+// https://www.c-tran.com/about-c-tran/business/c-tran-gtfs-data
+// https://www.c-tran.com/images/Google/GoogleTransitUpload.zip
 public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 
 	public static void main(String[] args) {
