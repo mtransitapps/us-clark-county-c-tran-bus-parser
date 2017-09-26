@@ -81,7 +81,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 		return MAgency.ROUTE_TYPE_BUS;
 	}
 
-	private static final String RSN_VINE = "50";
+	private static final String RSN_VINE = "Vine";
 	private static final long VIDE_RID = 50L;
 
 	@Override
