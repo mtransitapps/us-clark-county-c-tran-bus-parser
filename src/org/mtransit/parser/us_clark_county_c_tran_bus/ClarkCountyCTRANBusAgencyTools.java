@@ -655,14 +655,14 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, PORTLAND) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("3198"), // SW Terwilliger & Campus
+						Stops.ALL_STOPS.get("3185"), // SW US Veterans Rd & Bldg #16
 								Stops.ALL_STOPS.get("6019"), // SW Campus Dr & Terwilliger
 								Stops.ALL_STOPS.get("112"), // Andresen P&R
 						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
 						Stops.ALL_STOPS.get("112"), // Andresen P&R
-								Stops.ALL_STOPS.get("3198"), // SW Terwilliger & Campus
+								Stops.ALL_STOPS.get("3185"), // SW US Veterans Rd & Bldg #16
 								Stops.ALL_STOPS.get("6019"), // SW Campus Dr & Terwilliger
 						})) //
 				.compileBothTripSort());
