@@ -87,6 +87,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 	}
 
 	private static final String RSN_VINE = "Vine";
+
 	private static final long VIDE_RID = 50L;
 
 	@Override
@@ -198,7 +199,6 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 	private static final String VANCOUVER_MALL_TRANSIT_CENTER = VANCOUVER_SHORT + " Mall " + TRANSIT_CENTER_SHORT;
 	private static final String WSU_VANCOUVER = "WSU " + VANCOUVER_SHORT;
 	private static final String YACOLT = "Yacolt";
-
 
 	private static HashMap<Long, RouteTripSpec> ALL_ROUTE_TRIPS2;
 	static {
@@ -518,69 +518,64 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
 						})) //
 				.compileBothTripSort());
-		map2.put(92l, new RouteTripSpec(92l, //
+		map2.put(92L, new RouteTripSpec(92L, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, _45TH_STREET, //
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, FISHER_S_LANDING_TRANSIT_CENTER) //
 				.addTripSort(MDirectionType.EAST.intValue(), //
 						Arrays.asList(new String[] { //
 						Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
-								Stops.ALL_STOPS.get("252"), // Addy St & Addy Loop
+								Stops.ALL_STOPS.get("2336"), // == E Street 2900 Block
+								Stops.ALL_STOPS.get("252"), // != Addy St & Addy Loop =>
+								Stops.ALL_STOPS.get("6178"), // != 39th St. & J St. =>
 						})) //
 				.addTripSort(MDirectionType.WEST.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("252"), // Addy St & Addy Loop
+						Stops.ALL_STOPS.get("6178"), // != 39th St. & J St. <=
+								Stops.ALL_STOPS.get("252"), // != Addy St & Addy Loop <=
+								Stops.ALL_STOPS.get("2348"), // != Addy St 3300 Block
+								Stops.ALL_STOPS.get("2350"), // == Main St 3000 Block
 								Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
 						})) //
 				.compileBothTripSort());
-		map2.put(105l, new RouteTripSpec(105l, //
+		map2.put(105L, new RouteTripSpec(105L, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER, //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, PORTLAND) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6002"), // SW 6th & Columbia <= START
+						Stops.ALL_STOPS.get("6002"), // SW 6th & Columbia <=
 								Stops.ALL_STOPS.get("6006"), // != SW 6th & Stark
-								Stops.ALL_STOPS.get("5001"), // != SW 5th & Alder <= START
+								Stops.ALL_STOPS.get("5001"), // != SW 5th & Alder <=
 								Stops.ALL_STOPS.get("5009"), // != != SW 5th & Hall
-								Stops.ALL_STOPS.get("117"), // != <> I-5 && BURNSIDE
-								Stops.ALL_STOPS.get("118"), // == <> I-5 && LOMBARD
-								Stops.ALL_STOPS.get("631"), // == != Broadway & 7th St
+								Stops.ALL_STOPS.get("631"), // == Broadway & 7th St
 								Stops.ALL_STOPS.get("633"), // != Broadway & 13th St fs [nb]
 								Stops.ALL_STOPS.get("110"), // <> 99th Street TC
-								Stops.ALL_STOPS.get("105"), // Salmon Creek & Park and Ride #PORTLAND
+								Stops.ALL_STOPS.get("105"), // != Salmon Creek & Park and Ride #PORTLAND
 						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("105"), // Salmon Creek & Park and Ride #PORTLAND
+						Stops.ALL_STOPS.get("105"), // != Salmon Creek & Park and Ride #PORTLAND
 								Stops.ALL_STOPS.get("110"), // <> 99th Street TC
-								Stops.ALL_STOPS.get("6046"), // E 15th St & Broadway [wb]
+								Stops.ALL_STOPS.get("6046"), // != E 15th St & Broadway
+								Stops.ALL_STOPS.get("6053"), // == Washington St & W 9th St
 								Stops.ALL_STOPS.get("5001"), // != SW 5th & Alder
-								Stops.ALL_STOPS.get("6053"), // == != Washington St & W 9th St fs
-								Stops.ALL_STOPS.get("118"), // == <> I-5 && LOMBARD
-								Stops.ALL_STOPS.get("117"), // != I-5 && BURNSIDE
 								Stops.ALL_STOPS.get("6002"), // != SW 6th & Columbia ==> END
 						})) //
 				.compileBothTripSort());
-		map2.put(134l, new RouteTripSpec(134l, //
+		map2.put(134L, new RouteTripSpec(134L, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER, //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, PORTLAND) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
 						Arrays.asList(new String[] { //
 						Stops.ALL_STOPS.get("6002"), // SW 6th & Columbia
-								Stops.ALL_STOPS.get("6006"), // != SW 6th & Stark
-								Stops.ALL_STOPS.get("118"), // <> I-5 && LOMBARD
-								Stops.ALL_STOPS.get("115"), // <> I-5 SOUTH && COLUMBIA WAY
-								Stops.ALL_STOPS.get("6008"), // <> I-5 && NE 94TH STREET
-								Stops.ALL_STOPS.get("110"), // <> 99th Street TC
-								Stops.ALL_STOPS.get("105"), // Salmon Creek P&R
+								Stops.ALL_STOPS.get("6006"), // == == SW 6th & Stark
+								Stops.ALL_STOPS.get("110"), // <> != 99th Street TC
+								Stops.ALL_STOPS.get("105"), // == == Salmon Creek P&R
 						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("105"), // Salmon Creek P&R
-								Stops.ALL_STOPS.get("110"), // <> 99th Street TC
-								Stops.ALL_STOPS.get("6008"), // <> I-5 && NE 94TH STREET
-								Stops.ALL_STOPS.get("115"), // <> I-5 SOUTH && COLUMBIA WAY
-								Stops.ALL_STOPS.get("118"), // <> I-5 && LOMBARD
-								Stops.ALL_STOPS.get("5001"), // != SW 5th & Alder
+						Stops.ALL_STOPS.get("105"), // == == Salmon Creek P&R
+								Stops.ALL_STOPS.get("110"), // <> != 99th Street TC
+								Stops.ALL_STOPS.get("5001"), // == == SW 5th & Alder
 								Stops.ALL_STOPS.get("5009"), // SW 5th & Hall
 						})) //
 				.compileBothTripSort());
@@ -600,7 +595,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("3170"), // NE Multnomah & 3rd [wb]
 						})) //
 				.compileBothTripSort());
-		map2.put(164l, new RouteTripSpec(164l, //
+		map2.put(164L, new RouteTripSpec(164L, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER, // Fisher's Landing Transit
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, PORTLAND) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
@@ -608,23 +603,15 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 						Stops.ALL_STOPS.get("6001"), // SW 6th & Market <= START
 								Stops.ALL_STOPS.get("6003"), // SW 6th & Salmon
 								Stops.ALL_STOPS.get("6005"), // SW 6th & Washington
-								Stops.ALL_STOPS.get("123"), // != SR-14 Fwy Stop EB #1 W End
 								Stops.ALL_STOPS.get("5002"), // SW 5th & Morrison <= START
 								Stops.ALL_STOPS.get("5005"), // <> SW 5th & Madison
 								Stops.ALL_STOPS.get("5006"), // <> SW 5th & Columbia
 								Stops.ALL_STOPS.get("5008"), // SW 5th & Harrison
-								Stops.ALL_STOPS.get("117"), // <> I-5 && BURNSIDE
-								Stops.ALL_STOPS.get("116"), // <> I-84 && NE 82ND AVENUE
-								Stops.ALL_STOPS.get("124"), // != SR-14 Fwy Stop EB #2 I-205 Ramp
-								Stops.ALL_STOPS.get("125"), // == SR-14 Fwy Stop EB #3 E End
 								Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
 						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
 						Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
-								Stops.ALL_STOPS.get("127"), // == != SR-14 Fwy Stop WB #2 W End
-								Stops.ALL_STOPS.get("116"), // == <> I-84 && NE 82ND AVENUE
-								Stops.ALL_STOPS.get("117"), // != <> I-5 && BURNSIDE
 								Stops.ALL_STOPS.get("6001"), // SW 6th & Market => END
 								Stops.ALL_STOPS.get("5002"), // != SW 5th & Morrison => END
 								Stops.ALL_STOPS.get("5005"), // <> SW 5th & Madison
@@ -632,26 +619,21 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("5008"), // SW 5th & Harrison => END
 						})) //
 				.compileBothTripSort());
-		map2.put(177l, new RouteTripSpec(177l, //
+		map2.put(177L, new RouteTripSpec(177L, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER, //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, PORTLAND) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
 						Arrays.asList(new String[] { //
 						Stops.ALL_STOPS.get("6001"), // SW 6th & Market <= START
 								Stops.ALL_STOPS.get("6005"), // SW 6th & Washington
-								Stops.ALL_STOPS.get("115"), // I-5 SOUTH && COLUMBIA WAY
 								Stops.ALL_STOPS.get("5008"), // SW 5th & Harrison <= START
-								Stops.ALL_STOPS.get("117"), // <> I-5 && BURNSIDE
-								Stops.ALL_STOPS.get("116"), // <> I-84 && NE 82ND AVENUE
 								Stops.ALL_STOPS.get("102"), // == Evergreen Park & Ride
 						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
 						Stops.ALL_STOPS.get("102"), // Evergreen Park & Ride
-								Stops.ALL_STOPS.get("116"), // <> I-84 && NE 82ND AVENUE
 								Stops.ALL_STOPS.get("5002"), // SW 5th & Morrison
 								Stops.ALL_STOPS.get("5008"), // SW 5th & Harrison => END
-								Stops.ALL_STOPS.get("117"), // <> I-5 && BURNSIDE
 								Stops.ALL_STOPS.get("6001"), // SW 6th & Market => END
 						})) //
 				.compileBothTripSort());
@@ -741,9 +723,6 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 
 	@Override
 	public boolean mergeHeadsign(MTrip mTrip, MTrip mTripToMerge) {
-		if (isGoodEnoughAccepted()) {
-			return super.mergeHeadsign(mTrip, mTripToMerge);
-		}
 		System.out.printf("\nUnexpected trips to merge: %s & %s!\n", mTrip, mTripToMerge);
 		System.exit(-1);
 		return false;
