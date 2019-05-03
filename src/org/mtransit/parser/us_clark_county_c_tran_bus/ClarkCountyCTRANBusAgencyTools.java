@@ -203,7 +203,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 	private static HashMap<Long, RouteTripSpec> ALL_ROUTE_TRIPS2;
 	static {
 		HashMap<Long, RouteTripSpec> map2 = new HashMap<Long, RouteTripSpec>();
-		map2.put(2l, new RouteTripSpec(2l, //
+		map2.put(2L, new RouteTripSpec(2L, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, _99TH_STREET_TRANSIT_CENTER, //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
@@ -221,7 +221,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("632"), // Broadway & Evergreen Blvd
 						})) //
 				.compileBothTripSort());
-		map2.put(6l, new RouteTripSpec(6l, //
+		map2.put(6L, new RouteTripSpec(6L, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, GRAND_CENTRAL, //
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, FRUIT_VALLEY) //
 				.addTripSort(MDirectionType.EAST.intValue(), //
@@ -237,7 +237,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("6023"), // Fruit Valley Rd & La Frambois
 						})) //
 				.compileBothTripSort());
-		map2.put(7l, new RouteTripSpec(7l, //
+		map2.put(7L, new RouteTripSpec(7L, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, BATTLE_GROUND, //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER_MALL_TRANSIT_CENTER) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
@@ -251,10 +251,9 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
 						})) //
 				.compileBothTripSort());
-		map2.put(9l, new RouteTripSpec(
-				9l, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "139th St & 10th Ave", MDirectionType.SOUTH.intValue(),
-				MTrip.HEADSIGN_TYPE_STRING, _99TH_STREET_TRANSIT_CENTER) //
+		map2.put(9L, new RouteTripSpec(9L, //
+				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "139th St & 10th Ave", //
+				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, _99TH_STREET_TRANSIT_CENTER) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
 						Arrays.asList(new String[] { //
 						Stops.ALL_STOPS.get("110"), // 99th Street TC
@@ -266,7 +265,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("110"), // 99th Street TC
 						})) //
 				.compileBothTripSort());
-		map2.put(19l, new RouteTripSpec(19l, //
+		map2.put(19L, new RouteTripSpec(19L, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, WSU_VANCOUVER, //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, _99TH_STREET_TRANSIT_CENTER) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
@@ -280,7 +279,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("110"), // 99th Street TC
 						})) //
 				.compileBothTripSort());
-		map2.put(25l, new RouteTripSpec(25l, //
+		map2.put(25L, new RouteTripSpec(25L, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, _99TH_STREET_TRANSIT_CENTER, //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
@@ -295,7 +294,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("3492"), // Mill Plain & Franklin [eb]
 						})) //
 				.compileBothTripSort());
-		map2.put(30l, new RouteTripSpec(30l, //
+		map2.put(30L, new RouteTripSpec(30L, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, FISHER_S_LANDING_TRANSIT_CENTER, //
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) //
 				.addTripSort(MDirectionType.EAST.intValue(), //
@@ -311,7 +310,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("632"), // Broadway & Evergreen Blvd
 						})) //
 				.compileBothTripSort());
-		map2.put(37l, new RouteTripSpec(37l, //
+		map2.put(37L, new RouteTripSpec(37L, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, FISHER_S_LANDING_TRANSIT_CENTER, //
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) // Evergreen Blvd & C St
 				.addTripSort(MDirectionType.EAST.intValue(), //
@@ -336,7 +335,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("1104"), // Evergreen Blvd & C St
 						})) //
 				.compileBothTripSort());
-		map2.put(39l, new RouteTripSpec(39l, //
+		map2.put(39L, new RouteTripSpec(39L, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "Stapleton", //
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) //
 				.addTripSort(MDirectionType.EAST.intValue(), //
@@ -350,7 +349,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("1607"), // VA Transit Center
 						})) //
 				.compileBothTripSort());
-		map2.put(41l, new RouteTripSpec(41l, //
+		map2.put(41L, new RouteTripSpec(41L, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, FISHER_S_LANDING_TRANSIT_CENTER, //
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) // E 15th St & Broadway [wb
 				.addTripSort(MDirectionType.EAST.intValue(), //
@@ -365,7 +364,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("6046"), // E 15th St & Broadway [wb]
 						})) //
 				.compileBothTripSort());
-		map2.put(47l, new RouteTripSpec(47l, //
+		map2.put(47L, new RouteTripSpec(47L, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, YACOLT, // BATTLE_GROUND // Fairgrounds Ave at Ball
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) // Washington St & W 9th St
 				.addTripSort(MDirectionType.NORTH.intValue(), //
@@ -374,18 +373,18 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("632"), // ++ Broadway & Evergreen Blvd
 								Stops.ALL_STOPS.get("831"), // ++ W Main & SE Clark Ave [eb]
 								Stops.ALL_STOPS.get("3741"), // ++ Yacolt Rd & Railroad Ave
-								Stops.ALL_STOPS.get("6038"), // Fairgrounds Ave at Ball Park
+								Stops.ALL_STOPS.get("6201"), // NE Grace Ave & E Main St SB
 						})) //
 				.addTripSort(MDirectionType.SOUTH.intValue(), //
 						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6038"), // Fairgrounds Ave at Ball Park
+						Stops.ALL_STOPS.get("6200"), // NE Grace Ave & E Main St NB
 								Stops.ALL_STOPS.get("3741"), // ++ Yacolt Rd & Railroad Ave
 								Stops.ALL_STOPS.get("835"), // ++ W Main & 3rd Ave [wb]
 								Stops.ALL_STOPS.get("579"), // ++ Washington & 13th St
 								Stops.ALL_STOPS.get("6053"), // Washington St & W 9th St fs
 						})) //
 				.compileBothTripSort());
-		map2.put(60l, new RouteTripSpec(60l, //
+		map2.put(60L, new RouteTripSpec(60L, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER, //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, DELTA_PARK) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
@@ -404,7 +403,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("111"), // Delta Park/Vanport MAX
 						})) //
 				.compileBothTripSort());
-		map2.put(65l, new RouteTripSpec(65l, //
+		map2.put(65L, new RouteTripSpec(65L, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, FISHER_S_LANDING_TRANSIT_CENTER, //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, PARKROSE_MAX) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
@@ -418,7 +417,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("101"), // Parkrose/Sumner Transit Center
 						})) //
 				.compileBothTripSort());
-		map2.put(71l, new RouteTripSpec(71l, //
+		map2.put(71L, new RouteTripSpec(71L, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, _99TH_STREET_TRANSIT_CENTER, //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
@@ -432,7 +431,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("632"), // Broadway & Evergreen Blvd
 						})) //
 				.compileBothTripSort());
-		map2.put(72l, new RouteTripSpec(72l, //
+		map2.put(72L, new RouteTripSpec(72L, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, _152ND_AVENUE, //
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER_MALL_TRANSIT_CENTER) //
 				.addTripSort(MDirectionType.EAST.intValue(), //
@@ -446,7 +445,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
 						})) //
 				.compileBothTripSort());
-		map2.put(73l, new RouteTripSpec(73l, //
+		map2.put(73L, new RouteTripSpec(73L, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER_MALL_TRANSIT_CENTER, //
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "") //
 				.addTripSort(MDirectionType.EAST.intValue(), //
@@ -461,7 +460,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 						// no stops
 						})) //
 				.compileBothTripSort());
-		map2.put(74l, new RouteTripSpec(74l, //
+		map2.put(74L, new RouteTripSpec(74L, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, _162ND_AVENUE, //
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER_MALL_TRANSIT_CENTER) //
 				.addTripSort(MDirectionType.EAST.intValue(), //
@@ -475,7 +474,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
 						})) //
 				.compileBothTripSort());
-		map2.put(78l, new RouteTripSpec(78l, //
+		map2.put(78L, new RouteTripSpec(78L, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER_MALL_TRANSIT_CENTER, //
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, _99TH_STREET_TRANSIT_CENTER) //
 				.addTripSort(MDirectionType.EAST.intValue(), //
@@ -489,7 +488,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("110"), // 99th Street TC
 						})) //
 				.compileBothTripSort());
-		map2.put(80l, new RouteTripSpec(80l, //
+		map2.put(80L, new RouteTripSpec(80L, //
 				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, FISHER_S_LANDING_TRANSIT_CENTER, //
 				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER_MALL_TRANSIT_CENTER) //
 				.addTripSort(MDirectionType.EAST.intValue(), //
@@ -564,7 +563,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("5009"), // SW 5th & Hall
 						})) //
 				.compileBothTripSort());
-		map2.put(157l, new RouteTripSpec(157l, //
+		map2.put(157L, new RouteTripSpec(157L, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER, // 99th Street TC
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, PORTLAND) // NE Multnomah & 3rd [wb]
 				.addTripSort(MDirectionType.NORTH.intValue(), //
@@ -622,7 +621,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 								Stops.ALL_STOPS.get("6001"), // SW 6th & Market => END
 						})) //
 				.compileBothTripSort());
-		map2.put(190l, new RouteTripSpec(190l, //
+		map2.put(190L, new RouteTripSpec(190L, //
 				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER, //
 				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, PORTLAND) //
 				.addTripSort(MDirectionType.NORTH.intValue(), //
