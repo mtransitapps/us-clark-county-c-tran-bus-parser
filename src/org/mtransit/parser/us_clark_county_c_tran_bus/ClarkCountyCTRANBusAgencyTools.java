@@ -22,7 +22,6 @@ import org.mtransit.parser.gtfs.data.GStop;
 import org.mtransit.parser.gtfs.data.GTrip;
 import org.mtransit.parser.gtfs.data.GTripStop;
 import org.mtransit.parser.mt.data.MAgency;
-import org.mtransit.parser.mt.data.MDirectionType;
 import org.mtransit.parser.mt.data.MRoute;
 import org.mtransit.parser.mt.data.MTrip;
 import org.mtransit.parser.mt.data.MTripStop;
@@ -86,7 +85,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 		return MAgency.ROUTE_TYPE_BUS;
 	}
 
-	private static final String RSN_VINE = "Vine";
+	private static final String RSN_VINE = "The Vine";
 
 	private static final long VIDE_RID = 50L;
 
@@ -179,478 +178,9 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 		return CleanUtils.cleanLabel(gRouteLongName);
 	}
 
-	private static final String TRANSIT_CENTER_SHORT = "TC";
-	private static final String VANCOUVER_SHORT = "Van";
-	//
-	private static final String _152ND_AVENUE = "152nd Ave";
-	private static final String _162ND_AVENUE = "162nd Ave";
-	private static final String _45TH_STREET = "45th St";
-	private static final String _99TH_STREET_TRANSIT_CENTER = "99th St " + TRANSIT_CENTER_SHORT;
-	private static final String BATTLE_GROUND = "Battle Ground";
-	private static final String DELTA_PARK = "Delta Pk";
-	private static final String DOWNTOWN_VANCOUVER = "Downtown " + VANCOUVER_SHORT;
-	private static final String FISHER_S_LANDING_TRANSIT_CENTER = "Fisher's Landing " + TRANSIT_CENTER_SHORT;
-	private static final String FRUIT_VALLEY = "Fruit Vly";
-	private static final String GRAND_CENTRAL = "Grand Central"; // Grand Ctrl
-	private static final String MAX = "MAX";
-	private static final String PARKROSE_MAX = "Parkrose " + MAX;
-	private static final String PORTLAND = "Portland";
-	private static final String VANCOUVER = "Vancouver"; // VANCOUVER_SHORT
-	private static final String VANCOUVER_MALL_TRANSIT_CENTER = VANCOUVER_SHORT + " Mall " + TRANSIT_CENTER_SHORT;
-	private static final String WSU_VANCOUVER = "WSU " + VANCOUVER_SHORT;
-	private static final String YACOLT = "Yacolt";
-
 	private static HashMap<Long, RouteTripSpec> ALL_ROUTE_TRIPS2;
 	static {
 		HashMap<Long, RouteTripSpec> map2 = new HashMap<Long, RouteTripSpec>();
-		map2.put(2L, new RouteTripSpec(2L, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, _99TH_STREET_TRANSIT_CENTER, //
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) //
-				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("632"), // Broadway & Evergreen Blvd
-								Stops.ALL_STOPS.get("110"), // 99th Street TC & NE 7th Ave
-						})) //
-				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("110"), // 99th Street TC & NE 7th Ave
-								Stops.ALL_STOPS.get("2003"), // ==
-								Stops.ALL_STOPS.get("3260"), // !=
-								Stops.ALL_STOPS.get("3492"), // !=
-								Stops.ALL_STOPS.get("579"), // ==
-								Stops.ALL_STOPS.get("632"), // Broadway & Evergreen Blvd
-						})) //
-				.compileBothTripSort());
-		map2.put(6L, new RouteTripSpec(6L, //
-				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, GRAND_CENTRAL, //
-				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, FRUIT_VALLEY) //
-				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6023"), // Fruit Valley Rd & La Frambois
-								Stops.ALL_STOPS.get("1607"), // VA Transit Center
-								Stops.ALL_STOPS.get("6066"), // Columbia House Blvd at Park & Ride
-						})) //
-				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6066"), // Columbia House Blvd at Park & Ride
-								Stops.ALL_STOPS.get("1607"), // VA Transit Center
-								Stops.ALL_STOPS.get("6023"), // Fruit Valley Rd & La Frambois
-						})) //
-				.compileBothTripSort());
-		map2.put(7L, new RouteTripSpec(7L, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, BATTLE_GROUND, //
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER_MALL_TRANSIT_CENTER) //
-				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
-								Stops.ALL_STOPS.get("3076"), // Grace & Rasmussen
-						})) //
-				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("3076"), // Grace & Rasmussen
-								Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
-						})) //
-				.compileBothTripSort());
-		map2.put(9L, new RouteTripSpec(9L, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, "139th St & 10th Ave", //
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, _99TH_STREET_TRANSIT_CENTER) //
-				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("110"), // 99th Street TC
-								Stops.ALL_STOPS.get("6014"), // NE 139th St & 10th Ave
-						})) //
-				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6014"), // NE 139th St & 10th Ave
-								Stops.ALL_STOPS.get("110"), // 99th Street TC
-						})) //
-				.compileBothTripSort());
-		map2.put(19L, new RouteTripSpec(19L, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, WSU_VANCOUVER, //
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, _99TH_STREET_TRANSIT_CENTER) //
-				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("110"), // 99th Street TC
-								Stops.ALL_STOPS.get("6122"), // NE 29th Ave & WSUV Trailhead
-						})) //
-				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6122"), // NE 29th Ave & WSUV Trailhead
-								Stops.ALL_STOPS.get("110"), // 99th Street TC
-						})) //
-				.compileBothTripSort());
-		map2.put(25L, new RouteTripSpec(25L, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, _99TH_STREET_TRANSIT_CENTER, //
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) //
-				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("3492"), // Mill Plain & Franklin [eb]
-								Stops.ALL_STOPS.get("1104"), // Evergreen Blvd & C St
-								Stops.ALL_STOPS.get("110"), // 99th Street TC {
-						})) //
-				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("110"), // 99th Street TC {,
-								Stops.ALL_STOPS.get("3492"), // Mill Plain & Franklin [eb]
-						})) //
-				.compileBothTripSort());
-		map2.put(30L, new RouteTripSpec(30L, //
-				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, FISHER_S_LANDING_TRANSIT_CENTER, //
-				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) //
-				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("632"), // Broadway & Evergreen Blvd
-								Stops.ALL_STOPS.get("3058"), // NE 18th St & 65th Ave [eb]
-								Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
-						})) //
-				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
-								Stops.ALL_STOPS.get("1076"), // NE 18th St & 65th Ave [wb]
-								Stops.ALL_STOPS.get("632"), // Broadway & Evergreen Blvd
-						})) //
-				.compileBothTripSort());
-		map2.put(37L, new RouteTripSpec(37L, //
-				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, FISHER_S_LANDING_TRANSIT_CENTER, //
-				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) // Evergreen Blvd & C St
-				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("1104"), // Evergreen Blvd & C St
-								Stops.ALL_STOPS.get("1202"), // Mill Plain 6600 Block
-								Stops.ALL_STOPS.get("1312"), // == Mill Plain 16000 Block
-								Stops.ALL_STOPS.get("1310"), // != SE 164th Ave 900 Block
-								Stops.ALL_STOPS.get("1318"), // != SE 164th Ave & 32nd St
-								Stops.ALL_STOPS.get("2919"), // != Mill Plain & 172nd Ave [eb]
-								Stops.ALL_STOPS.get("6086"), // != SE 34th St & 172nd Ave [wb]
-								Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
-						})) //
-				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
-								Stops.ALL_STOPS.get("6087"), // != SE 34th Street & 172nd Avenue [eb]
-								Stops.ALL_STOPS.get("6043"), // != Mill Plain & 172nd Ave [wb]
-								Stops.ALL_STOPS.get("1316"), // != SE 164th Ave 3200 Block
-								Stops.ALL_STOPS.get("2130"), // != SE 164th Ave 1400 Block
-								Stops.ALL_STOPS.get("1320"), // == Mill Plain & 164th Ave [wb]
-								Stops.ALL_STOPS.get("1104"), // Evergreen Blvd & C St
-						})) //
-				.compileBothTripSort());
-		map2.put(39L, new RouteTripSpec(39L, //
-				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "Stapleton", //
-				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) //
-				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("1607"), // VA Transit Center
-								Stops.ALL_STOPS.get("632"), // Broadway & Evergreen Blvd
-						})) //
-				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("632"), // Broadway & Evergreen Blvd
-								Stops.ALL_STOPS.get("1607"), // VA Transit Center
-						})) //
-				.compileBothTripSort());
-		map2.put(41L, new RouteTripSpec(41L, //
-				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, FISHER_S_LANDING_TRANSIT_CENTER, //
-				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) // E 15th St & Broadway [wb
-				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6046"), // E 15th St & Broadway [wb]
-								Stops.ALL_STOPS.get("6053"), // Washington St & W 9th St fs
-								Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
-						})) //
-				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
-								Stops.ALL_STOPS.get("6046"), // E 15th St & Broadway [wb]
-						})) //
-				.compileBothTripSort());
-		map2.put(47L, new RouteTripSpec(47L, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, YACOLT, // BATTLE_GROUND // Fairgrounds Ave at Ball
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) // Washington St & W 9th St
-				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("631"), // Broadway & 7th St
-								Stops.ALL_STOPS.get("632"), // ++ Broadway & Evergreen Blvd
-								Stops.ALL_STOPS.get("831"), // ++ W Main & SE Clark Ave [eb]
-								Stops.ALL_STOPS.get("3741"), // ++ Yacolt Rd & Railroad Ave
-								Stops.ALL_STOPS.get("6201"), // NE Grace Ave & E Main St SB
-						})) //
-				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6200"), // NE Grace Ave & E Main St NB
-								Stops.ALL_STOPS.get("3741"), // ++ Yacolt Rd & Railroad Ave
-								Stops.ALL_STOPS.get("835"), // ++ W Main & 3rd Ave [wb]
-								Stops.ALL_STOPS.get("579"), // ++ Washington & 13th St
-								Stops.ALL_STOPS.get("6053"), // Washington St & W 9th St fs
-						})) //
-				.compileBothTripSort());
-		map2.put(60L, new RouteTripSpec(60L, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER, //
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, DELTA_PARK) //
-				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("111"), // Delta Park/Vanport MAX
-								Stops.ALL_STOPS.get("1612"), // != N Hayden Island Dr & N Tomahawk Dr
-								Stops.ALL_STOPS.get("6052"), // != 12100 N. Pavilion
-								Stops.ALL_STOPS.get("631"), // Broadway & 7th St
-						})) //
-				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("631"), // Broadway & 7th St
-								Stops.ALL_STOPS.get("6154"), // == Broadway & 12th St fs
-								Stops.ALL_STOPS.get("6013"), // != Jantzen Beach Main Stop
-								Stops.ALL_STOPS.get("6052"), // != 12100 N. Pavilion
-								Stops.ALL_STOPS.get("111"), // Delta Park/Vanport MAX
-						})) //
-				.compileBothTripSort());
-		map2.put(65L, new RouteTripSpec(65L, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, FISHER_S_LANDING_TRANSIT_CENTER, //
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, PARKROSE_MAX) //
-				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("101"), // Parkrose/Sumner Transit Center
-								Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
-						})) //
-				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
-								Stops.ALL_STOPS.get("101"), // Parkrose/Sumner Transit Center
-						})) //
-				.compileBothTripSort());
-		map2.put(71L, new RouteTripSpec(71L, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, _99TH_STREET_TRANSIT_CENTER, //
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) //
-				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("632"), // Broadway & Evergreen Blvd
-								Stops.ALL_STOPS.get("110"), // 99th Street TC
-						})) //
-				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("110"), // 99th Street TC
-								Stops.ALL_STOPS.get("632"), // Broadway & Evergreen Blvd
-						})) //
-				.compileBothTripSort());
-		map2.put(72L, new RouteTripSpec(72L, //
-				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, _152ND_AVENUE, //
-				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER_MALL_TRANSIT_CENTER) //
-				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
-								Stops.ALL_STOPS.get("1095"), // NE 76th St & Ward Rd
-						})) //
-				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("1095"), // NE 76th St & Ward Rd
-								Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
-						})) //
-				.compileBothTripSort());
-		map2.put(73L, new RouteTripSpec(73L, //
-				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER_MALL_TRANSIT_CENTER, //
-				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, "") //
-				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
-								Stops.ALL_STOPS.get("6117"), // Van Mall Loop & East Trailhead
-								Stops.ALL_STOPS.get("6116"), // Van Mall Loop & West Trailhead
-								Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
-						})) //
-				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { //
-						// no stops
-						})) //
-				.compileBothTripSort());
-		map2.put(74L, new RouteTripSpec(74L, //
-				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, _162ND_AVENUE, //
-				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER_MALL_TRANSIT_CENTER) //
-				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
-								Stops.ALL_STOPS.get("6174"), // NE Ward Rd. & NE 162nd Ave.
-						})) //
-				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6174"), // NE Ward Rd. & NE 162nd Ave.
-								Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
-						})) //
-				.compileBothTripSort());
-		map2.put(78L, new RouteTripSpec(78L, //
-				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER_MALL_TRANSIT_CENTER, //
-				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, _99TH_STREET_TRANSIT_CENTER) //
-				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("110"), // 99th Street TC
-								Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
-						})) //
-				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
-								Stops.ALL_STOPS.get("110"), // 99th Street TC
-						})) //
-				.compileBothTripSort());
-		map2.put(80L, new RouteTripSpec(80L, //
-				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, FISHER_S_LANDING_TRANSIT_CENTER, //
-				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER_MALL_TRANSIT_CENTER) //
-				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
-								Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
-						})) //
-				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
-								Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
-						})) //
-				.compileBothTripSort());
-		map2.put(92L, new RouteTripSpec(92L, //
-				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, _45TH_STREET, //
-				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, FISHER_S_LANDING_TRANSIT_CENTER) //
-				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
-								Stops.ALL_STOPS.get("2336"), // == E Street 2900 Block
-								Stops.ALL_STOPS.get("252"), // != Addy St & Addy Loop =>
-								Stops.ALL_STOPS.get("6178"), // != 39th St. & J St. =>
-						})) //
-				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6178"), // != 39th St. & J St. <=
-								Stops.ALL_STOPS.get("252"), // != Addy St & Addy Loop <=
-								Stops.ALL_STOPS.get("2348"), // != Addy St 3300 Block
-								Stops.ALL_STOPS.get("2350"), // == Main St 3000 Block
-								Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
-						})) //
-				.compileBothTripSort());
-		map2.put(105L, new RouteTripSpec(105L, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER, //
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, PORTLAND) //
-				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6002"), // SW 6th & Columbia <=
-								Stops.ALL_STOPS.get("6006"), // != SW 6th & Stark
-								Stops.ALL_STOPS.get("5001"), // != SW 5th & Alder <=
-								Stops.ALL_STOPS.get("5009"), // != != SW 5th & Hall
-								Stops.ALL_STOPS.get("631"), // == Broadway & 7th St
-								Stops.ALL_STOPS.get("633"), // != Broadway & 13th St fs [nb]
-								Stops.ALL_STOPS.get("110"), // <> 99th Street TC
-								Stops.ALL_STOPS.get("105"), // != Salmon Creek & Park and Ride #PORTLAND
-						})) //
-				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("105"), // != Salmon Creek & Park and Ride #PORTLAND
-								Stops.ALL_STOPS.get("110"), // <> 99th Street TC
-								Stops.ALL_STOPS.get("6046"), // != E 15th St & Broadway
-								Stops.ALL_STOPS.get("6053"), // == Washington St & W 9th St
-								Stops.ALL_STOPS.get("5001"), // != SW 5th & Alder
-								Stops.ALL_STOPS.get("6002"), // != SW 6th & Columbia ==> END
-						})) //
-				.compileBothTripSort());
-		map2.put(134L, new RouteTripSpec(134L, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER, //
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, PORTLAND) //
-				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6002"), // SW 6th & Columbia
-								Stops.ALL_STOPS.get("6006"), // == == SW 6th & Stark
-								Stops.ALL_STOPS.get("110"), // <> != 99th Street TC
-								Stops.ALL_STOPS.get("105"), // == == Salmon Creek P&R
-						})) //
-				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("105"), // == == Salmon Creek P&R
-								Stops.ALL_STOPS.get("110"), // <> != 99th Street TC
-								Stops.ALL_STOPS.get("5001"), // == == SW 5th & Alder
-								Stops.ALL_STOPS.get("5009"), // SW 5th & Hall
-						})) //
-				.compileBothTripSort());
-		map2.put(157L, new RouteTripSpec(157L, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER, // 99th Street TC
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, PORTLAND) // NE Multnomah & 3rd [wb]
-				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("3171"), // NE Wheeler & Multnomah
-								Stops.ALL_STOPS.get("3170"), // NE Multnomah & 3rd [wb]
-								Stops.ALL_STOPS.get("110"), // <> 99th Street TC
-						})) //
-				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("110"), // <> 99th Street TC
-								Stops.ALL_STOPS.get("3171"), // NE Wheeler & Multnomah
-								Stops.ALL_STOPS.get("3170"), // NE Multnomah & 3rd [wb]
-						})) //
-				.compileBothTripSort());
-		map2.put(164L, new RouteTripSpec(164L, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER, // Fisher's Landing Transit
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, PORTLAND) //
-				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6001"), // SW 6th & Market <= START
-								Stops.ALL_STOPS.get("6003"), // SW 6th & Salmon
-								Stops.ALL_STOPS.get("6005"), // SW 6th & Washington
-								Stops.ALL_STOPS.get("5002"), // SW 5th & Morrison <= START
-								Stops.ALL_STOPS.get("5005"), // <> SW 5th & Madison
-								Stops.ALL_STOPS.get("5006"), // <> SW 5th & Columbia
-								Stops.ALL_STOPS.get("5008"), // SW 5th & Harrison
-								Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
-						})) //
-				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("106"), // Fisher's Landing Transit Center
-								Stops.ALL_STOPS.get("6001"), // SW 6th & Market => END
-								Stops.ALL_STOPS.get("5002"), // != SW 5th & Morrison => END
-								Stops.ALL_STOPS.get("5005"), // <> SW 5th & Madison
-								Stops.ALL_STOPS.get("5006"), // <> SW 5th & Columbia
-								Stops.ALL_STOPS.get("5008"), // SW 5th & Harrison => END
-						})) //
-				.compileBothTripSort());
-		map2.put(177L, new RouteTripSpec(177L, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER, //
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, PORTLAND) //
-				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6001"), // SW 6th & Market <= START
-								Stops.ALL_STOPS.get("6005"), // SW 6th & Washington
-								Stops.ALL_STOPS.get("5008"), // SW 5th & Harrison <= START
-								Stops.ALL_STOPS.get("102"), // == Evergreen Park & Ride
-						})) //
-				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("102"), // Evergreen Park & Ride
-								Stops.ALL_STOPS.get("5002"), // SW 5th & Morrison
-								Stops.ALL_STOPS.get("5008"), // SW 5th & Harrison => END
-								Stops.ALL_STOPS.get("6001"), // SW 6th & Market => END
-						})) //
-				.compileBothTripSort());
-		map2.put(190L, new RouteTripSpec(190L, //
-				MDirectionType.NORTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER, //
-				MDirectionType.SOUTH.intValue(), MTrip.HEADSIGN_TYPE_STRING, PORTLAND) //
-				.addTripSort(MDirectionType.NORTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("3185"), // SW US Veterans Rd & Bldg #16
-								Stops.ALL_STOPS.get("6019"), // SW Campus Dr & Terwilliger
-								Stops.ALL_STOPS.get("112"), // Andresen P&R
-						})) //
-				.addTripSort(MDirectionType.SOUTH.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("112"), // Andresen P&R
-								Stops.ALL_STOPS.get("3185"), // SW US Veterans Rd & Bldg #16
-								Stops.ALL_STOPS.get("6019"), // SW Campus Dr & Terwilliger
-						})) //
-				.compileBothTripSort());
-		map2.put(VIDE_RID, new RouteTripSpec(VIDE_RID, //
-				MDirectionType.EAST.intValue(), MTrip.HEADSIGN_TYPE_STRING, VANCOUVER_MALL_TRANSIT_CENTER, //
-				MDirectionType.WEST.intValue(), MTrip.HEADSIGN_TYPE_STRING, DOWNTOWN_VANCOUVER) //
-				.addTripSort(MDirectionType.EAST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6136"), // 7th Street at Turtle Place
-								Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
-						})) //
-				.addTripSort(MDirectionType.WEST.intValue(), //
-						Arrays.asList(new String[] { //
-						Stops.ALL_STOPS.get("6137"), // Van Mall Transit Center
-								Stops.ALL_STOPS.get("6136"), // 7th Street at Turtle Place
-						})) //
-				.compileBothTripSort());
 		ALL_ROUTE_TRIPS2 = map2;
 	}
 
@@ -694,7 +224,94 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 	@Override
 	public boolean mergeHeadsign(MTrip mTrip, MTrip mTripToMerge) {
 		List<String> headsignsValues = Arrays.asList(mTrip.getHeadsignValue(), mTripToMerge.getHeadsignValue());
-		if (mTrip.getRouteId() == 199L) {
+		if (mTrip.getRouteId() == 6L) {
+			if (Arrays.asList( //
+					"VA Medical Ctr", // <>
+					"Fruit Vly Rd & La Fra" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("Fruit Vly Rd & La Fra", mTrip.getHeadsignId()); // FRUIT_VALLEY
+				return true;
+			}
+			if (Arrays.asList( //
+					"VA Medical Ctr", // <>
+					"Columbia House Blvd @ P" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("Columbia House Blvd @ P", mTrip.getHeadsignId()); // GRAND_CENTRAL
+				return true;
+			}
+		} else if (mTrip.getRouteId() == 25L) {
+			if (Arrays.asList( //
+					"Evergreen Blvd & C St", //
+					"99th St TC" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("99th St TC", mTrip.getHeadsignId());
+				return true;
+			}
+		} else if (mTrip.getRouteId() == 41L) {
+			if (Arrays.asList( //
+					"Washington St & W 9th St", //
+					"Fisher's Lndg Transit" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("Fisher's Lndg Transit", mTrip.getHeadsignId());
+				return true;
+			}
+		} else if (mTrip.getRouteId() == 60L) {
+			if (Arrays.asList( //
+					"Broadway & 12th St Fs", //
+					"Delta Pk / Vanport MAX" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("Delta Pk / Vanport MAX", mTrip.getHeadsignId());
+				return true;
+			}
+		} else if (mTrip.getRouteId() == 65L) {
+			if (Arrays.asList( //
+					"39th St. & J St. [nb]", //
+					"Addy St & Addy Loop" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("Addy St & Addy Loop", mTrip.getHeadsignId());
+				return true;
+			}
+		} else if (mTrip.getRouteId() == 92L) {
+			if (Arrays.asList( //
+					"39th St. & J St. [nb]", //
+					"Addy St & Addy Loop" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("Addy St & Addy Loop", mTrip.getHeadsignId());
+				return true;
+			}
+		} else if (mTrip.getRouteId() == 105L) {
+			if (Arrays.asList( //
+					"SW 5th & Alder", //
+					"SW 6th & Columbia" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("SW 6th & Columbia", mTrip.getHeadsignId()); // Portland SOUTH
+				return true;
+			}
+		} else if (mTrip.getRouteId() == 164L) {
+			if (Arrays.asList( //
+					"SW 5th & Morrison", //
+					"SW 5th & Harrison" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("SW 5th & Harrison", mTrip.getHeadsignId());
+				return true;
+			}
+			if (Arrays.asList( //
+					"SW 5th & Morrison", //
+					"SW 5th & Harrison", //
+					"SW 6th & Mkt" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("SW 6th & Mkt", mTrip.getHeadsignId());
+				return true;
+			}
+		} else if (mTrip.getRouteId() == 177L) {
+			if (Arrays.asList( //
+					"SW 5th & Harrison", //
+					"SW 6th & Mkt" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("SW 6th & Mkt", mTrip.getHeadsignId());
+				return true;
+			}
+		} else if (mTrip.getRouteId() == 199L) {
 			if (Arrays.asList( //
 					"SW 6th & Columbia", //
 					"SW 5th & Hall" //
