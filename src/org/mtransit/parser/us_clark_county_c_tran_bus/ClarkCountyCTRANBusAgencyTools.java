@@ -171,7 +171,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 		return cleanRouteLongName(gRouteLongName);
 	}
 
-	private static final Pattern STARTS_WITH_RSN = Pattern.compile("(^[0-9]+ \\- )", Pattern.CASE_INSENSITIVE);
+	private static final Pattern STARTS_WITH_RSN = Pattern.compile("(^[0-9]+ - )", Pattern.CASE_INSENSITIVE);
 
 	private String cleanRouteLongName(String gRouteLongName) {
 		gRouteLongName = STARTS_WITH_RSN.matcher(gRouteLongName).replaceAll(StringUtils.EMPTY);
@@ -179,6 +179,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 	}
 
 	private static HashMap<Long, RouteTripSpec> ALL_ROUTE_TRIPS2;
+
 	static {
 		HashMap<Long, RouteTripSpec> map2 = new HashMap<Long, RouteTripSpec>();
 		ALL_ROUTE_TRIPS2 = map2;
@@ -213,12 +214,8 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 		if (ALL_ROUTE_TRIPS2.containsKey(mRoute.getId())) {
 			return; // split
 		}
-		if (isGoodEnoughAccepted()) {
-			mTrip.setHeadsignString(cleanTripHeadsign(gTrip.getTripHeadsign()), gTrip.getDirectionId() == null ? 0 : gTrip.getDirectionId());
-			return;
-		}
-		System.out.printf("\n%s: Unexpected trip %s!\n", mRoute.getId(), gTrip);
-		System.exit(-1);
+		final int headSignId = gTrip.getDirectionId() == null ? 0 : gTrip.getDirectionId();
+		mTrip.setHeadsignString(cleanTripHeadsign(gTrip.getTripHeadsign()), headSignId);
 	}
 
 	@Override
