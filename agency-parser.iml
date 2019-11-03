@@ -31,11 +31,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="parser" exported="" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: commons-io-2.4" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: commons-csv-1.1" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: commons-lang3-3.9" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: commons-io-2.4" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: commons-csv-1.1" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: commons-lang3-3.9" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-io-2.4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-csv-1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-lang3-3.9" level="project" />
   </component>
 </module>
