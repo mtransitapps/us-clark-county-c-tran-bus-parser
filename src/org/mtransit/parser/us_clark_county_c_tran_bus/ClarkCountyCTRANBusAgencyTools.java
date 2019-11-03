@@ -119,41 +119,42 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 			}
 			int rsn = Integer.parseInt(gRoute.getRouteShortName());
 			switch (rsn) {
-			// @formatter:off
-			case 2: return "956338";
-			case 3: return "00A651";
-			case 4: return "B99874";
-			case 6: return "01A553";
-			case 7: return "8DC63F";
-			case 9: return "8781BD";
-			case 19: return "32BCAD";
-			case 25: return "C1B400";
-			case 30: return "BA6831";
-			case 32: return "2E3092";
-			case 37: return "F7941E";
-			case 38: return "B41E8E";
-			case 39: return "EC008E";
-			case 41: return LIMITED_ROUTES_COLOR;
-			case 44: return LIMITED_ROUTES_COLOR;
-			case 47: return LIMITED_ROUTES_COLOR;
-			case 50: return "78BE20"; // VINE
-			case 60: return LIMITED_ROUTES_COLOR;
-			case 65: return LIMITED_ROUTES_COLOR;
-			case 71: return "FDB913";
-			case 72: return "92278F";
-			case 73: return "BA7031";
-			case 74: return "F573A9";
-			case 78: return "00AEEf";
-			case 80: return "0072BC";
-			case 92: return "BC9632";
-			case 105: return EXPRESS_ROUTES_COLOR;
-			case 134: return EXPRESS_ROUTES_COLOR;
-			case 157: return EXPRESS_ROUTES_COLOR;
-			case 164: return EXPRESS_ROUTES_COLOR;
-			case 177: return EXPRESS_ROUTES_COLOR;
-			case 190: return EXPRESS_ROUTES_COLOR;
-			case 199: return EXPRESS_ROUTES_COLOR;
-			// @formatter:on
+				// @formatter:off
+				case 2: return "956338";
+				case 3: return "00A651";
+				case 4: return "B99874";
+				case 6: return "01A553";
+				case 7: return "8DC63F";
+				case 9: return "8781BD";
+				case 19: return "32BCAD";
+				case 25: return "C1B400";
+				case 30: return "BA6831";
+				case 32: return "2E3092";
+				case 37: return "F7941E";
+				case 38: return "B41E8E";
+				case 39: return "EC008E";
+				case 41: return LIMITED_ROUTES_COLOR;
+				case 44: return LIMITED_ROUTES_COLOR;
+				case 47: return LIMITED_ROUTES_COLOR;
+				case 50: return "78BE20"; // VINE
+				case 60: return LIMITED_ROUTES_COLOR;
+				case 65: return LIMITED_ROUTES_COLOR;
+				case 67: return LIMITED_ROUTES_COLOR;
+				case 71: return "FDB913";
+				case 72: return "92278F";
+				case 73: return "BA7031";
+				case 74: return "F573A9";
+				case 78: return "00AEEf";
+				case 80: return "0072BC";
+				case 92: return "BC9632";
+				case 105: return EXPRESS_ROUTES_COLOR;
+				case 134: return EXPRESS_ROUTES_COLOR;
+				case 157: return EXPRESS_ROUTES_COLOR;
+				case 164: return EXPRESS_ROUTES_COLOR;
+				case 177: return EXPRESS_ROUTES_COLOR;
+				case 190: return EXPRESS_ROUTES_COLOR;
+				case 199: return EXPRESS_ROUTES_COLOR;
+				// @formatter:on
 			}
 			if (isGoodEnoughAccepted()) {
 				return null;
