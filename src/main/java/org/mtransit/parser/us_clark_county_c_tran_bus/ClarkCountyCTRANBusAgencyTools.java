@@ -231,7 +231,21 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 				return true;
 			}
 			if (Arrays.asList( //
+					"VA Transit Ctr", // <>
+					"Fruit Vly Rd & La Fra" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("Fruit Vly Rd & La Fra", mTrip.getHeadsignId()); // FRUIT_VALLEY
+				return true;
+			}
+			if (Arrays.asList( //
 					"VA Medical Ctr", // <>
+					"Columbia House Blvd @ P" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("Columbia House Blvd @ P", mTrip.getHeadsignId()); // GRAND_CENTRAL
+				return true;
+			}
+			if (Arrays.asList( //
+					"VA Transit Ctr", // <>
 					"Columbia House Blvd @ P" //
 			).containsAll(headsignsValues)) {
 				mTrip.setHeadsignString("Columbia House Blvd @ P", mTrip.getHeadsignId()); // GRAND_CENTRAL
@@ -255,6 +269,21 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 			}
 		} else if (mTrip.getRouteId() == 60L) {
 			if (Arrays.asList( //
+					"City Ctr No Jantzen", //
+					"City Ctr" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("City Ctr", mTrip.getHeadsignId());
+				return true;
+			}
+			if (Arrays.asList( //
+					"Broadway & 12th St Fs", //
+					"Delta Pk No Jantzen", //
+					"Delta Pk" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("Delta Pk", mTrip.getHeadsignId());
+				return true;
+			}
+			if (Arrays.asList( //
 					"Broadway & 12th St Fs", //
 					"Delta Pk / Vanport MAX" //
 			).containsAll(headsignsValues)) {
@@ -267,6 +296,14 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 					"Addy St & Addy Loop" //
 			).containsAll(headsignsValues)) {
 				mTrip.setHeadsignString("Addy St & Addy Loop", mTrip.getHeadsignId());
+				return true;
+			}
+		} else if (mTrip.getRouteId() == 80L) {
+			if (Arrays.asList( //
+					"VM", //
+					"Van Mall TC" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("Van Mall TC", mTrip.getHeadsignId());
 				return true;
 			}
 		} else if (mTrip.getRouteId() == 92L) {
@@ -283,6 +320,21 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 					"SW 6th & Columbia" //
 			).containsAll(headsignsValues)) {
 				mTrip.setHeadsignString("SW 6th & Columbia", mTrip.getHeadsignId()); // Portland SOUTH
+				return true;
+			}
+		} else if (mTrip.getRouteId() == 134L) {
+			if (Arrays.asList( //
+					"PDX", //
+					"SW 5th & Hall" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("SW 5th & Hall", mTrip.getHeadsignId());
+				return true;
+			}
+			if (Arrays.asList( //
+					"SC", //
+					"Salmon Crk P&R" //
+			).containsAll(headsignsValues)) {
+				mTrip.setHeadsignString("Salmon Crk P&R", mTrip.getHeadsignId());
 				return true;
 			}
 		} else if (mTrip.getRouteId() == 164L) {
@@ -326,6 +378,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 	@Override
 	public String cleanTripHeadsign(String tripHeadsign) {
 		tripHeadsign = CleanUtils.CLEAN_AT.matcher(tripHeadsign).replaceAll(CleanUtils.CLEAN_AT_REPLACEMENT);
+		tripHeadsign = CleanUtils.keepToAndRevoveVia(tripHeadsign);
 		tripHeadsign = CleanUtils.cleanSlashes(tripHeadsign);
 		tripHeadsign = CleanUtils.cleanNumbers(tripHeadsign);
 		tripHeadsign = CleanUtils.cleanStreetTypes(tripHeadsign);
