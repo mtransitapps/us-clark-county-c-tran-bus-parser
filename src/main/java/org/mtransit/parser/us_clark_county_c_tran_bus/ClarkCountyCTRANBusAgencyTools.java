@@ -320,7 +320,7 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 			}
 		} else if (mTrip.getRouteId() == 65L) {
 			if (Arrays.asList( //
-					"39th St. & J St. [nb]", //
+					"39th St & J St [nb]", //
 					"Addy St & Addy Loop" //
 			).containsAll(headsignsValues)) {
 				mTrip.setHeadsignString("Addy St & Addy Loop", mTrip.getHeadsignId());
@@ -336,14 +336,14 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 			}
 		} else if (mTrip.getRouteId() == 92L) {
 			if (Arrays.asList( //
-					"39th St. & J St. [nb]", //
+					"39th St & J St [nb]", //
 					"Addy St & Addy Loop" //
 			).containsAll(headsignsValues)) {
 				mTrip.setHeadsignString("Addy St & Addy Loop", mTrip.getHeadsignId());
 				return true;
 			}
 			if (Arrays.asList( //
-					"39th St. & J St.", //
+					"39th St & J St", //
 					"Addy St & Addy Loop" //
 			).containsAll(headsignsValues)) {
 				mTrip.setHeadsignString("Addy St & Addy Loop", mTrip.getHeadsignId());
