@@ -16,7 +16,6 @@ import java.util.Locale;
 import java.util.regex.Pattern;
 
 // https://www.c-tran.com/about-c-tran/business/c-tran-gtfs-data
-// https://www.c-tran.com/images/Google/GoogleTransitUpload.zip
 public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 
 	public static void main(@NotNull String[] args) {
@@ -61,6 +60,10 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 		switch (routeShortName) {
 		case "Vine":
 			return 50L;
+		case "Red":
+			return 1018L;
+		case "Green":
+			return 1007L;
 		}
 		return super.convertRouteIdFromShortNameNotSupported(routeShortName);
 	}
@@ -170,8 +173,8 @@ public class ClarkCountyCTRANBusAgencyTools extends DefaultAgencyTools {
 
 	@NotNull
 	@Override
-	public String cleanDirectionHeadsign(boolean fromStopName, @NotNull String directionHeadSign) {
-		directionHeadSign = super.cleanDirectionHeadsign(fromStopName, directionHeadSign);
+	public String cleanDirectionHeadsign(int directionId, boolean fromStopName, @NotNull String directionHeadSign) {
+		directionHeadSign = super.cleanDirectionHeadsign(directionId, fromStopName, directionHeadSign);
 		directionHeadSign = STARTS_WITH_BOUNDS_.matcher(directionHeadSign).replaceAll(EMPTY);
 		directionHeadSign = ENDS_WITH_NO_.matcher(directionHeadSign).replaceAll(EMPTY);
 		return directionHeadSign;
